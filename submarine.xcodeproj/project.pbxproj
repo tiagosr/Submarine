@@ -12,7 +12,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B150E49016F10EE100AC2DCD /* submarine.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = submarine.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
+		B150E49016F10EE100AC2DCD /* sub.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = sub.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		B150E49716F10FA300AC2DCD /* m_pd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = m_pd.h; sourceTree = "<group>"; };
 		B150E49916F10FB100AC2DCD /* submarine.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = submarine.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -40,7 +40,7 @@
 		B150E49116F10EE100AC2DCD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B150E49016F10EE100AC2DCD /* submarine.pd_darwin */,
+				B150E49016F10EE100AC2DCD /* sub.pd_darwin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,7 +73,7 @@
 			);
 			name = submarine;
 			productName = submarine;
-			productReference = B150E49016F10EE100AC2DCD /* submarine.pd_darwin */;
+			productReference = B150E49016F10EE100AC2DCD /* sub.pd_darwin */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
@@ -172,22 +172,32 @@
 		B150E49516F10EE100AC2DCD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				EXECUTABLE_EXTENSION = pd_darwin;
 				EXECUTABLE_PREFIX = "";
+				LD_NO_PIE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRODUCT_NAME = sub;
 			};
 			name = Debug;
 		};
 		B150E49616F10EE100AC2DCD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				EXECUTABLE_EXTENSION = pd_darwin;
 				EXECUTABLE_PREFIX = "";
+				LD_NO_PIE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRODUCT_NAME = sub;
 			};
 			name = Release;
 		};
@@ -210,6 +220,7 @@
 				B150E49616F10EE100AC2DCD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
