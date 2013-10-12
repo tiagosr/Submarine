@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		B150E49816F10FA300AC2DCD /* m_pd.h in Headers */ = {isa = PBXBuildFile; fileRef = B150E49716F10FA300AC2DCD /* m_pd.h */; };
 		B150E49A16F10FB100AC2DCD /* submarine.c in Sources */ = {isa = PBXBuildFile; fileRef = B150E49916F10FB100AC2DCD /* submarine.c */; };
+		B1B4D9491808DFD8003C27A3 /* pdutils.c in Sources */ = {isa = PBXBuildFile; fileRef = B1B4D9471808DFD8003C27A3 /* pdutils.c */; };
+		B1B4D94A1808DFD8003C27A3 /* pdutils.h in Headers */ = {isa = PBXBuildFile; fileRef = B1B4D9481808DFD8003C27A3 /* pdutils.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B150E49016F10EE100AC2DCD /* sub.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = sub.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		B150E49716F10FA300AC2DCD /* m_pd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = m_pd.h; sourceTree = "<group>"; };
 		B150E49916F10FB100AC2DCD /* submarine.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = submarine.c; sourceTree = "<group>"; };
+		B1B4D9471808DFD8003C27A3 /* pdutils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pdutils.c; sourceTree = "<group>"; };
+		B1B4D9481808DFD8003C27A3 /* pdutils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pdutils.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,8 @@
 			children = (
 				B150E49916F10FB100AC2DCD /* submarine.c */,
 				B150E49716F10FA300AC2DCD /* m_pd.h */,
+				B1B4D9471808DFD8003C27A3 /* pdutils.c */,
+				B1B4D9481808DFD8003C27A3 /* pdutils.h */,
 				B150E49116F10EE100AC2DCD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,6 +58,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1B4D94A1808DFD8003C27A3 /* pdutils.h in Headers */,
 				B150E49816F10FA300AC2DCD /* m_pd.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,6 +115,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B150E49A16F10FB100AC2DCD /* submarine.c in Sources */,
+				B1B4D9491808DFD8003C27A3 /* pdutils.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +190,7 @@
 					dynamic_lookup,
 				);
 				PRODUCT_NAME = sub;
+				SYMROOT = "../pd objects";
 			};
 			name = Debug;
 		};
@@ -198,6 +207,7 @@
 					dynamic_lookup,
 				);
 				PRODUCT_NAME = sub;
+				SYMROOT = "../pd objects";
 			};
 			name = Release;
 		};
